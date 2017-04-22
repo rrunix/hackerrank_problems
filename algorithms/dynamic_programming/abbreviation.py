@@ -6,7 +6,6 @@ def can_transform(text, query):
     text = list(text)
     query = list(query)
 
-    text_len = len(text)
     query_len = len(query)
 
     #Uppercase letters from text
@@ -30,9 +29,8 @@ def can_transform(text, query):
         dp[i] = True
 
     for i in range(len(text) - len(query)):
-        for j in range(len(query)):
+        for j, b in enumerate(query):
             a = text[i + j + 1]
-            b = query[j]
 
             if a.isupper():
                 dp[j + 1] = dp[j] and a == b
@@ -43,4 +41,4 @@ def can_transform(text, query):
 
 N = int(input())
 for _ in range(N):
-    print (can_transform(input(), input()))
+    print(can_transform(input(), input()))
