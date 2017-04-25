@@ -1,3 +1,4 @@
+#source https://www.hackerrank.com/challenges/counter-game
 import math
 
 T = int(input())
